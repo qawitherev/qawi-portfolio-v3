@@ -1,16 +1,27 @@
-import './App.css';
+import "./App.css";
+import { Hero } from "./components/Hero";
+import { MobileStacks } from "./components/MobileStacks";
+import { NavBar } from "./components/NavBar";
+import { PageLayout } from "./components/PageLayout";
+import { Bento } from "./components/Bento";
+import { WebStacks } from "./components/WebStacks";
 
 function App() {
   return (
-    <>
-    <div className='flex flex-row h-screen' >
-      <div className='w-2/12 bg-blue-500'>
-        
-      </div>
-      <div className='w-8/12 bg-blue-300'></div>
-      <div className='w-2/12 bg-blue-500'></div>
+    <div className='bg-background-dark-blue w-full h-full' >
+      <PageLayout>
+        <NavBar/>
+        <div className='mb-20' />
+        <Hero/>
+        <div className=' mb-48' />
+        <Bento/>
+        <div className='mb-20' />
+        <MobileStacks/>
+        <div className='mb-16' />
+        <WebStacks/>
+        <div className=' mb-48' />
+      </PageLayout>
     </div>
-    </>
   );
 }
 
