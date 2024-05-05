@@ -13,7 +13,7 @@ function App() {
         <NavBar/>
         <div className='mb-20' />
         <Hero/>
-        <div className=' mb-48' />
+        <div className='md:mb-48 mb-0' />
         <Bento/>
         <div className='mb-20' />
         <MobileStacks/>
