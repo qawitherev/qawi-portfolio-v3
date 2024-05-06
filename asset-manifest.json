@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.47be78bb.css",
-    "main.js": "/static/js/main.b926f1c3.js",
-    "static/js/453.b3c85388.chunk.js": "/static/js/453.b3c85388.chunk.js",
-    "static/media/subbento5.svg": "/static/media/subbento5.b24d6f7d30021a35e00310a9c87890c4.svg",
-    "static/media/mobile_stacks.svg": "/static/media/mobile_stacks.e87232bb4d4ba58f7916073608018027.svg",
-    "static/media/web_stacks.svg": "/static/media/web_stacks.06357b3c70128321e32a0324e0f9973d.svg",
-    "static/media/subbento4.svg": "/static/media/subbento4.41b3b146272f592c6e49c640baee3085.svg",
-    "static/media/subbento0.svg": "/static/media/subbento0.93198c5a76a337226daba5ed92f3f729.svg",
-    "static/media/subbento2.svg": "/static/media/subbento2.329b3eda0d7fafa8816aff7bdf271e64.svg",
-    "static/media/hero_svg.svg": "/static/media/hero_svg.ab03a02126ce2a384a0bc26a60551399.svg",
-    "static/media/profile_pic.png": "/static/media/profile_pic.2a389b23fbf80c0d3313.png",
-    "static/media/subbento3_3.svg": "/static/media/subbento3_3.951a46f51696baa072ac7efaa1f60c5f.svg",
-    "static/media/subbento3_1.svg": "/static/media/subbento3_1.6b14287f671ffbec2a6218c95c84729e.svg",
-    "static/media/subbento3_0.svg": "/static/media/subbento3_0.3ec97a47ecf96e515a70dd15059c418b.svg",
-    "index.html": "/index.html",
-    "static/media/subbento3_2.svg": "/static/media/subbento3_2.2d1f77516473a6fa3562590b5936c214.svg",
-    "main.47be78bb.css.map": "/static/css/main.47be78bb.css.map",
-    "main.b926f1c3.js.map": "/static/js/main.b926f1c3.js.map",
-    "453.b3c85388.chunk.js.map": "/static/js/453.b3c85388.chunk.js.map"
+    "main.css": "/qawi-portfolio-v3/static/css/main.47be78bb.css",
+    "main.js": "/qawi-portfolio-v3/static/js/main.2ffad0d8.js",
+    "static/js/453.b3c85388.chunk.js": "/qawi-portfolio-v3/static/js/453.b3c85388.chunk.js",
+    "static/media/subbento5.svg": "/qawi-portfolio-v3/static/media/subbento5.b24d6f7d30021a35e00310a9c87890c4.svg",
+    "static/media/mobile_stacks.svg": "/qawi-portfolio-v3/static/media/mobile_stacks.e87232bb4d4ba58f7916073608018027.svg",
+    "static/media/web_stacks.svg": "/qawi-portfolio-v3/static/media/web_stacks.06357b3c70128321e32a0324e0f9973d.svg",
+    "static/media/subbento4.svg": "/qawi-portfolio-v3/static/media/subbento4.41b3b146272f592c6e49c640baee3085.svg",
+    "static/media/subbento0.svg": "/qawi-portfolio-v3/static/media/subbento0.93198c5a76a337226daba5ed92f3f729.svg",
+    "static/media/subbento2.svg": "/qawi-portfolio-v3/static/media/subbento2.329b3eda0d7fafa8816aff7bdf271e64.svg",
+    "static/media/hero_svg.svg": "/qawi-portfolio-v3/static/media/hero_svg.ab03a02126ce2a384a0bc26a60551399.svg",
+    "static/media/profile_pic.png": "/qawi-portfolio-v3/static/media/profile_pic.2a389b23fbf80c0d3313.png",
+    "static/media/subbento3_3.svg": "/qawi-portfolio-v3/static/media/subbento3_3.951a46f51696baa072ac7efaa1f60c5f.svg",
+    "static/media/subbento3_1.svg": "/qawi-portfolio-v3/static/media/subbento3_1.6b14287f671ffbec2a6218c95c84729e.svg",
+    "static/media/subbento3_0.svg": "/qawi-portfolio-v3/static/media/subbento3_0.3ec97a47ecf96e515a70dd15059c418b.svg",
+    "index.html": "/qawi-portfolio-v3/index.html",
+    "static/media/subbento3_2.svg": "/qawi-portfolio-v3/static/media/subbento3_2.2d1f77516473a6fa3562590b5936c214.svg",
+    "main.47be78bb.css.map": "/qawi-portfolio-v3/static/css/main.47be78bb.css.map",
+    "main.2ffad0d8.js.map": "/qawi-portfolio-v3/static/js/main.2ffad0d8.js.map",
+    "453.b3c85388.chunk.js.map": "/qawi-portfolio-v3/static/js/453.b3c85388.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.47be78bb.css",
-    "static/js/main.b926f1c3.js"
+    "static/js/main.2ffad0d8.js"
   ]
 }
