@@ -6,7 +6,7 @@ export function MobileStacks() {
 
   return (
     <>
-      <div className="flex flex-col">
+      <div id='techStacks' className="flex flex-col">
         <div className="flex md:flex-row items-center">
             <p className='text-white md:text-2xl text-xl font-bold tracking-wide' >Mobile Stacks</p>
             <div className=' w-1/6 h-[2px] bg-white rounded-sm mt-2 ml-1' />

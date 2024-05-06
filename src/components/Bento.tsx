@@ -31,7 +31,7 @@ export function Bento() {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="text-white font-bold md:text-2xl text-xl tracking-wide md:mb-8 mb-4">
+        <div id="summary" className="text-white font-bold md:text-2xl text-xl tracking-wide md:mb-8 mb-4">
           About Me
         </div>
         <div className="grid md:auto-rows-[200px] auto-rows-[180px] md:grid-cols-6 gap-3 col-span-1">

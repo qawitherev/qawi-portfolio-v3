@@ -1,3 +1,5 @@
+import { Link } from "react-scroll";
+
 interface NavItem {
   label: string;
   href?: string;
@@ -6,12 +8,14 @@ interface NavItem {
 
 export function NavBar() {
   const navItems: NavItem[] = [
-    { label: "Summary", onNavItemClicked() {
-      clickNavItemSummary()
-    } },
-    { label: "Tech-Stacks", onNavItemClicked() {
-      clickTechStacksSummary()
-    } },
+    {
+      label: "Summary",
+      href: 'summary',
+    },
+    {
+      label: "Tech-Stacks",
+      href: 'techStacks',
+    },
     {
       label: "Resume",
       onNavItemClicked() {
@@ -36,18 +40,27 @@ export function NavBar() {
 
   return (
     <div className="flex md:flex-row text-white pt-6">
-      <div className="flex w-fit font-bold text-2xl">Quest For Quality</div>
-      <ul className="flex md:flex-row md:flex-grow md:justify-end md:space-x-4 text-lg">
+      <div className="flex w-fit font-bold text-xl md:text-2xl">
+        Quest For Quality
+      </div>
+      <ul className="md:flex md:flex-row md:flex-grow md:justify-end md:space-x-4 text-lg hidden cursor-pointer">
         {navItems.map((item) => (
           <li key={item.label}>
             <div onClick={item.onNavItemClicked}>
-              <a
-                key={item.label}
+              {item.href && (<Link
+                activeClass="active"
+                to={item.href}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
                 className="inline-block transition-all duration-500 hover:scale-125"
-                href={item.href}
               >
                 {item.label}
-              </a>
+              </Link>)}
+              {item.onNavItemClicked && (
+                <a key={item.label} className="inline-block transition-all duration-500 hover:scale-125">{item.label}</a>
+              )}
             </div>
           </li>
         ))}
