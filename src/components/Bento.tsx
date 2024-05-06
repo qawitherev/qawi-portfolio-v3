@@ -9,15 +9,6 @@ import {
 } from "./Subbentos";
 
 export function Bento() {
-  const subbentos = [
-    <Subbento0 />, //companies served
-    <Subbento1 />, //projects
-    <Subbento2 />, //mobile stacks
-    <Subbento3 />, //social
-    <Subbento4 />, //catchphrase
-    <Subbento5 />, //web stacks
-    <Subbento6 />, //edu
-  ];
 
   const subbentosV2 = [
     <Subbento4 />,

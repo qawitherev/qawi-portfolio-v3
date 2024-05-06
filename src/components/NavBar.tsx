@@ -1,4 +1,5 @@
 import { Link } from "react-scroll";
+import { DownloadResume } from "../utils/DownloadResume";
 
 interface NavItem {
   label: string;
@@ -19,24 +20,10 @@ export function NavBar() {
     {
       label: "Resume",
       onNavItemClicked() {
-        clickNavItemResume();
+        DownloadResume()
       },
     },
   ];
-
-  function clickNavItemSummary() {
-    console.info("click navitem summary");
-  }
-
-  function clickTechStacksSummary() {
-    console.info("click navitem techStacks");
-  }
-  function clickNavItemResume() {
-    window.open(
-      "https://raw.githubusercontent.com/qawitherev/qawi-portfolio/master/public/AbdulQawi_Resume_Dec2023.pdf",
-      "_blank"
-    );
-  }
 
   return (
     <div className="flex md:flex-row text-white pt-6">
@@ -59,7 +46,7 @@ export function NavBar() {
                 {item.label}
               </Link>)}
               {item.onNavItemClicked && (
-                <a key={item.label} className="inline-block transition-all duration-500 hover:scale-125">{item.label}</a>
+                <p key={item.label} className="inline-block transition-all duration-500 hover:scale-125">{item.label}</p>
               )}
             </div>
           </li>

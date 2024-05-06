@@ -7,6 +7,7 @@ import Subbento3_3Svg from "../assets/svg/subbento3_3.svg";
 import Subbento4Svg from "../assets/svg/subbento4.svg";
 import ProfilePic from "../assets/svg/profile_pic.png";
 import Subbento5Svg from "../assets/svg/subbento5.svg";
+import { MailMe } from "../utils/MailMe";
 
 export function Subbento0() {
   return (
@@ -18,7 +19,11 @@ export function Subbento0() {
           </p>
         </div>
         <div className="w-1/3 transform ease-in-out duration-500 hover:scale-110 flex md:mr-0 mr-4">
-          <img src={Subbento0Svg} alt="subbento0_svg" className=" md:scale-150" />
+          <img
+            src={Subbento0Svg}
+            alt="subbento0_svg"
+            className=" md:scale-150"
+          />
         </div>
       </div>
     </>
@@ -63,11 +68,35 @@ export function Subbento2() {
 }
 
 export function Subbento3() {
-  const socials = [
-    Subbento3_0Svg,
-    Subbento3_1Svg,
-    Subbento3_2Svg,
-    Subbento3_3Svg,
+  interface Social {
+    imgSrc: string;
+    onSocialClicked: () => void;
+  }
+  const socialList: Social[] = [
+    {
+      imgSrc: Subbento3_0Svg,
+      onSocialClicked() {
+        window.open('https://linkedin.com/in/abdul-qawi-bin-kamran', '_blank')
+      },
+    },
+    {
+      imgSrc: Subbento3_1Svg,
+      onSocialClicked() {
+        window.open('https://github.com/qawitherev', '_blank')
+      },
+    },
+    {
+      imgSrc: Subbento3_2Svg,
+      onSocialClicked() {
+        MailMe()
+      },
+    },
+    {
+      imgSrc: Subbento3_3Svg,
+      onSocialClicked() {
+        window.open('tel:0168284082')
+      },
+    },
   ];
 
   return (
@@ -77,13 +106,15 @@ export function Subbento3() {
           More ways to reach out!
         </div>
         <div className="flex md:flex-col flex-row justify-around md:space-y-5 items-center">
-          {socials.map((item, i) => (
-            <img
-              key={i}
-              src={item}
-              alt={`${item}_svg`}
-              className="transform duration-500 ease-in-out hover:scale-150"
-            />
+          {socialList.map((item, i) => (
+            <div onClick={item.onSocialClicked}>
+              <img
+                key={i}
+                src={item.imgSrc}
+                alt={`${item}_svg`}
+                className="transform duration-500 ease-in-out hover:scale-150"
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -96,12 +127,22 @@ export function Subbento4() {
     <>
       <div className="relative h-full p-5">
         <div className="absolute left-0 bottom-0 md:w-2/3 w-1/3">
-          <img src={Subbento4Svg} alt="subbento4_svg" className="w-full transform duration-500 ease-in-out hover:scale-110" />
+          <img
+            src={Subbento4Svg}
+            alt="subbento4_svg"
+            className="w-full transform duration-500 ease-in-out hover:scale-110"
+          />
         </div>
         <div className="absolute right-0 h-fit md:w-1/2 w-3/4">
           <div className="flex flex-col justify-center items-end mr-5 h-full align-middle">
-              <img src={ProfilePic} alt="profile" className="md:w-[100px] md:h-[100px] w-[50px] h-[50px] md:mb-5 mb-2" />
-              <div className="text-white md:text-2xl text-lg font-semibold text-right">Software engineer proficient in web and mobile development</div>
+            <img
+              src={ProfilePic}
+              alt="profile"
+              className="md:w-[100px] md:h-[100px] w-[50px] h-[50px] md:mb-5 mb-2"
+            />
+            <div className="text-white md:text-2xl text-lg font-semibold text-right">
+              Software engineer proficient in web and mobile development
+            </div>
           </div>
         </div>
       </div>
@@ -110,20 +151,26 @@ export function Subbento4() {
 }
 
 export function Subbento5() {
-  return (<>
-  <div className="flex md:flex-col flex-row p-5 h-full">
-    <div className=" md:h-4/5 h-full md:mr-0 mr-3 flex flex-row justify-center transform duration-500 ease-in-out hover:scale-110">
-      <img src={Subbento5Svg} alt="subbento5_svg"/>
-    </div>
-    <div className="md:h-1/5 h-full flex items-center text-white md:text-2xl text-lg font-semibold md:text-center text-right">Skilled in  web design and development</div>
-  </div>
-  </>);
+  return (
+    <>
+      <div className="flex md:flex-col flex-row p-5 h-full">
+        <div className=" md:h-4/5 h-full md:mr-0 mr-3 flex flex-row justify-center transform duration-500 ease-in-out hover:scale-110">
+          <img src={Subbento5Svg} alt="subbento5_svg" />
+        </div>
+        <div className="md:h-1/5 h-full flex items-center text-white md:text-2xl text-lg font-semibold md:text-center text-right">
+          Skilled in web design and development
+        </div>
+      </div>
+    </>
+  );
 }
 
 export function Subbento6() {
-  return (<>
-    <div className="text-white md:text-2xl text-lg font-semibold text-center p-5 flex flex-row justify-center h-full items-center">
-      Bachelor of Computer Science (Software Engineering) With Hons.
-    </div>
-    </>);
+  return (
+    <>
+      <div className="text-white md:text-2xl text-lg font-semibold text-center p-5 flex flex-row justify-center h-full items-center">
+        Bachelor of Computer Science (Software Engineering) With Hons.
+      </div>
+    </>
+  );
 }
