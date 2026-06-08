@@ -2,16 +2,257 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ── Apple Design Language: Base ── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: 'SF Pro Text', 'SF Pro Display', system-ui, -apple-system,
+      BlinkMacSystemFont, 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.47;
+    letter-spacing: -0.374px;
+    color: #1d1d1f;
+    background: #ffffff;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ── Apple Design Language: Typography Tokens ── */
+@layer components {
+  /* Hero headline — 56px / 600 / 1.07 / -0.28px */
+  .text-hero-display {
+    font-family: 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1.07;
+    letter-spacing: -0.28px;
+  }
+
+  /* Tile headline — 40px / 600 / 1.1 / 0 */
+  .text-display-lg {
+    font-family: 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+
+  /* Section head — 34px / 600 / 1.47 / -0.374px */
+  .text-display-md {
+    font-family: 'SF Pro Text', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.47;
+    letter-spacing: -0.374px;
+  }
+
+  /* Lead / sub-headline — 28px / 400 / 1.14 / 0.196px */
+  .text-lead {
+    font-family: 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.14;
+    letter-spacing: 0.196px;
+  }
+
+  /* Tagline — 21px / 600 / 1.19 / 0.231px */
+  .text-tagline {
+    font-family: 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.19;
+    letter-spacing: 0.231px;
+  }
+
+  /* Body strong — 17px / 600 / 1.24 / -0.374px */
+  .text-body-strong {
+    font-family: 'SF Pro Text', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.24;
+    letter-spacing: -0.374px;
+  }
+
+  /* Caption strong — 14px / 600 / 1.29 / -0.224px */
+  .text-caption-strong {
+    font-family: 'SF Pro Text', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.29;
+    letter-spacing: -0.224px;
+  }
+
+  /* Caption — 14px / 400 / 1.43 / -0.224px */
+  .text-caption {
+    font-family: 'SF Pro Text', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: -0.224px;
+  }
+}
+
+/* ── Apple Design Language: Components ── */
+@layer components {
+  /* Primary pill CTA — Action Blue, full pill, scale(0.95) on press */
+  .btn-primary-pill {
+    display: inline-block;
+    background-color: #0066cc;
+    color: #ffffff;
+    font-family: 'SF Pro Text', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.47;
+    letter-spacing: -0.374px;
+    border-radius: 9999px;
+    padding: 11px 22px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s ease, outline 0.15s ease;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  .btn-primary-pill:hover {
+    outline: 2px solid #0071e3;
+  }
+
+  .btn-primary-pill:active {
+    transform: scale(0.95);
+  }
+
+  /* Utility card — white, hairline border, 18px radius */
+  .card-utility {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 18px;
+    padding: 24px;
+    transition: border-color 0.2s ease;
+  }
+
+  .card-utility:hover {
+    border-color: #cccccc;
+  }
+
+  /* Subtle card-reveal animation */
+  .animate-card-reveal {
+    opacity: 0;
+    animation: cardReveal 0.5s ease-out forwards;
+  }
+
+  @keyframes cardReveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ── Carousel ── */
+  .carousel-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    padding: 0;
+  }
+
+  .carousel-dot.active {
+    background-color: #ffffff;
+    transform: scale(1.3);
+  }
+
+  .carousel-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .carousel-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .carousel-arrow:active {
+    transform: scale(0.95);
+  }
+
+  /* Project chip — dark surface variant */
+  .chip-project {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'SF Pro Text', system-ui, -apple-system, BlinkMacSystemFont,
+      'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.08px;
+  }
+}
+
+/* ── Responsive: Mobile typography scale-down ── */
+@media (max-width: 640px) {
+  .text-hero-display {
+    font-size: 34px;
+  }
+
+  .text-display-md {
+    font-size: 28px;
+  }
+
+  .text-lead {
+    font-size: 21px;
+  }
+
+  .text-body-strong {
+    font-size: 16px;
+  }
 }

@@ -1,27 +1,18 @@
-import "./App.css";
 import { Hero } from "./components/Hero";
-import { MobileStacks } from "./components/MobileStacks";
-import { NavBar } from "./components/NavBar";
-import { PageLayout } from "./components/PageLayout";
-import { Bento } from "./components/Bento";
-import { WebStacks } from "./components/WebStacks";
+import { TechStacks } from "./components/TechStacks";
+import { Projects } from "./components/Projects";
+import { Experience } from "./components/Experience";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <div className='bg-background-dark-blue w-full h-full' >
-      <PageLayout>
-        <NavBar/>
-        <div className='mb-20' />
-        <Hero/>
-        <div className='md:mb-48 mb-0' />
-        <Bento/>
-        <div className='mb-20' />
-        <MobileStacks/>
-        <div className='mb-16' />
-        <WebStacks/>
-        <div className=' mb-48' />
-      </PageLayout>
-    </div>
+    <main>
+      <Hero />
+      <TechStacks />
+      <Projects />
+      <Experience />
+      <Footer />
+    </main>
   );
 }
 

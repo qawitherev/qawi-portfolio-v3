@@ -1,25 +1,48 @@
-import HeroSvg from "../assets/svg/hero_svg.svg";
-import { DownloadResume } from "../utils/DownloadResume";
-import { MailMe } from "../utils/MailMe";
-import { DefaultButton } from "./generics/ButtonVariants";
-
 export function Hero() {
   return (
-    <>
-      <div className='flex flex-col-reverse md:flex-row justify-center md:mx-0 mx-10'>
-        <div className='flex-1 flex flex-col space-y-1 text-white justify-end pb-36' >
-          <p className='font-base md:text-4xl text-3xl mb-5 md:text-start text-center'>Hi, I am Abdul Qawi</p>
-          <p className='font-bold md:text-6xl text-4xl md:text-left text-center'>A Multi-Tech</p>
-          <p className='font-bold md:text-6xl text-4xl md:pb-10 pb-3 md:text-left text-center'>Stack Master</p>
-          <div className='flex md:flex-row flex-col md:space-x-4 md:space-y-0 space-y-3' >
-            <DefaultButton buttonText="Get Resume" onClick={DownloadResume} />
-            <DefaultButton buttonText="Email Me" onClick={MailMe} />
+    <section className="bg-apple-tile-1 w-full flex justify-center">
+      <div className="max-w-apple-text w-full px-6 py-apple-section sm:py-apple-section max-sm:py-12 text-center">
+        {/* Headline */}
+        <h1 className="text-hero-display text-white">
+          I Build Software That Ships
+        </h1>
+
+        {/* Tagline */}
+        <p className="text-lead text-white mt-apple-lg max-w-2xl mx-auto">
+          Backend, infrastructure, CI/CD — I handle everything between idea and
+          production.
+        </p>
+
+        {/* What I do / What I don't do */}
+        <div className="mt-apple-xl grid grid-cols-1 sm:grid-cols-2 gap-apple-lg max-w-xl mx-auto text-left">
+          <div>
+            <span className="text-caption-strong text-apple-ink-soft uppercase tracking-wide">
+              What I do
+            </span>
+            <p className="text-body-strong text-white mt-apple-xs">
+              Web development (backend-focused), CI/CD pipelines, cloud
+              infrastructure, and a bit of everything. I&rsquo;m a generalist
+              who ships.
+            </p>
+          </div>
+          <div>
+            <span className="text-caption-strong text-apple-ink-soft uppercase tracking-wide">
+              What I don&rsquo;t do
+            </span>
+            <p className="text-body-strong text-white mt-apple-xs">
+              UI/UX design, system analysis, formal testing. I just like to
+              build.
+            </p>
           </div>
         </div>
-        <div className='flex-1' >
-          <img src={HeroSvg} alt="hero_svg" className='w-full' />
+
+        {/* CTA */}
+        <div className="mt-apple-xl">
+          <a href="mailto:qawitherev@gmail.com" className="btn-primary-pill">
+            Let&rsquo;s Talk
+          </a>
         </div>
       </div>
-    </>
+    </section>
   );
 }

@@ -1,41 +1,72 @@
-import { DownloadResume } from "../utils/DownloadResume";
-import { MailMe } from "../utils/MailMe";
-import { BlackButton, WhiteButton } from "./generics/ButtonVariants";
+const socialLinks = [
+  {
+    label: "GitHub",
+    href: "https://github.com/qawi",
+    aria: "GitHub profile",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/qawi",
+    aria: "LinkedIn profile",
+  },
+  {
+    label: "Email",
+    href: "mailto:qawitherev@gmail.com",
+    aria: "Send an email",
+  },
+];
 
 export function Footer() {
   return (
-    <>
-      <div className="flex md:flex-row flex-col bg-white mx-auto py-5">
-        <div className="flex flex-1 justify-center md:mb-0 mb-4 md:mx-0 mx-3">
-          <div className="md:w-1/2 w-full flex flex-col items-center">
-            <p className="text-gray-400 text-base font-semibold">Interested?</p>
-            <p className="bg-gradient-to-r from-blue-900 to-red-600 bg-clip-text text-transparent md:text-5xl text-4xl font-bold text-center pb-3">
-              Let's Connect
-            </p>
-            <p className="font-semibold text-lg text-center mb-3">
-              My DM is always open whether to just{" "}
-              <strong>ask questions</strong> or to{" "}
-              <strong>talk business</strong>
-            </p>
-            <BlackButton buttonText="Shoot The DM" onClick={MailMe} />
-          </div>
+    <footer className="bg-apple-tile-1 w-full flex justify-center">
+      <div className="max-w-apple-text w-full px-6 py-apple-section max-sm:py-12 text-center">
+        {/* Divider */}
+        <div className="border-t border-white/10 mb-apple-xxl max-sm:mb-apple-xl" />
+
+        {/* Headline */}
+        <h2 className="text-display-md text-white">Let&rsquo;s Connect</h2>
+
+        {/* Subtext */}
+        <p className="text-caption text-apple-ink-soft mt-apple-sm max-w-sm mx-auto leading-relaxed">
+          My DM is always open — whether to ask a question or talk business.
+        </p>
+
+        {/* CTA */}
+        <div className="mt-apple-xl">
+          <a href="mailto:qawitherev@gmail.com" className="btn-primary-pill">
+            Shoot a Message
+          </a>
         </div>
-        <div className="flex flex-1 justify-center md:mx-0 mx-3">
-          <div className="md:w-1/2 w-full flex flex-col items-center">
-            <p className="text-gray-400 text-base font-semibold">
-              Need More Info?
-            </p>
-            <p className="bg-gradient-to-r from-blue-900 to-red-600 bg-clip-text text-transparent md:text-5xl text-4xl font-bold text-center pb-3">
-              Get My Resume
-            </p>
-            <p className="font-semibold text-lg text-center mb-3">
-              List out <strong>comprehensive details</strong>, skills and
-              professional work experiences
-            </p>
-            <WhiteButton buttonText="Download Resume" onClick={DownloadResume} />
-          </div>
-        </div>
+
+        {/* Social links */}
+        <nav
+          aria-label="Social links"
+          className="mt-apple-xxl max-sm:mt-apple-xl flex items-center justify-center gap-apple-lg max-sm:gap-apple-md"
+        >
+          {socialLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith("mailto") ? undefined : "_blank"}
+              rel={
+                link.href.startsWith("mailto")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
+              aria-label={link.aria}
+              className="text-caption-strong text-white/60 hover:text-white transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Copyright */}
+        <p className="text-caption text-white/30 mt-apple-xl max-sm:mt-apple-lg">
+          &copy; {new Date().getFullYear()} Abdul Qawi Bin Kamran. Built with
+          intention.
+        </p>
       </div>
-    </>
+    </footer>
   );
 }
